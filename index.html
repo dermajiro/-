@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ひきクリニック｜三国駅前の皮膚科（皮膚腫瘍・日帰り手術／一般皮膚科）</title>
+  <meta name="description" content="三国駅前のひきクリニック。皮膚腫瘍・皮膚外科の日帰り手術（粉瘤・ほくろ切除・脂肪腫など）から、アトピー・水虫・乾癬など一般皮膚科まで幅広く対応。">
+  <style>
+    :root {
+      --maxw: 1120px;
+      --gap: 16px;
+      --muted: #8e8e93;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif; color: #222; }
+    body { scroll-behavior: smooth; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: var(--maxw); margin: 0 auto; padding: 0 16px; }
+    .wf { border: 1.5px dashed var(--muted); border-radius: 12px; background: #fff; }
+    .muted { color: #666; }
+    .section { padding: 32px 0; }
+    .section h2 { margin: 0 0 12px; font-size: 22px; }
+    .lead { padding: 16px; line-height: 1.75; }
+
+    /* ===== Hero: full-bleed image + overlay nav ===== */
+    .hero-bleed { position: relative; width: 100%; }
+    .hero-img {
+      width: 100%;
+      height: clamp(320px, 54vh, 640px);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: linear-gradient(135deg, #9bbbd4, #6a8dad);
+      /* 公式サイトの画像（許諾済み）を背景に使用 */
+      background-image: url('https://hiki-clinic.or.jp/img/about/mainimg.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0; display: grid; place-items: center;
+      background: linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.25), rgba(0,0,0,.35));
+      text-align: center; padding: 24px;
+    }
+    .hero-title { font-size: clamp(22px, 4vw, 40px); font-weight: 700; letter-spacing: .02em; color:#fff; }
+    .hero-sub   { margin-top: 8px; font-size: clamp(14px, 2.2vw, 18px); opacity: .95; color:#fff; }
+    .hero-cta { margin-top: 16px; display: inline-flex; gap: 10px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block; padding: 10px 16px; border-radius: 10px;
+      background: #fff; color: #111; border: 2px solid #fff; font-weight: 600;
+    }
+    .btn-outline { background: transparent; color: #fff; border-color: #fff; }
+
+    .hero-nav { position: absolute; top: 14px; right: 16px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .hero-nav a { padding: 8px 12px; border: 1px dashed #fff; border-radius: 999px; background: rgba(255,255,255,0.15); color: #fff; font-size: 14px; }
+
+    /* ===== Banners (Surgery menu) ===== */
+    .banner-grid { display: grid; grid-template-columns: 1fr; gap: var(--gap); }
+    .banner {
+      display: grid; grid-template-columns: 140px 1fr; gap: 12px; align-items: center;
+      padding: 12px; border: 1.5px dashed var(--muted); border-radius: 12px; background: #fff;
+      transition: transform .1s ease;
+    }
+    .banner:hover { transform: translateY(-2px); }
+    .thumb {
+      width: 140px; height: 96px; border: 1.5px dashed var(--muted); border-radius: 8px;
+      display: grid; place-items: center; color: var(--muted); background: #f2f2f7;
+      font-size: 12px;
+    }
+    .banner strong { font-size: 17px; }
+    .desc { margin-top: 4px; color: #555; font-size: 14px; line-height: 1.6; }
+
+    /* Doctor */
+    .doctor { display: grid; grid-template-columns: 1fr; gap: var(--gap); }
+    .doc-photo { height: 240px; border: 1.5px dashed var(--muted); border-radius: 10px; overflow: hidden; background:#f7f7fa; }
+    .doc-photo img { width: 100%; height: 100%; object-fit: cover; display:block; }
+
+    /* Hours */
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px dashed var(--muted); padding: 10px; text-align: center; }
+    th { background: #fafafa; }
+
+    /* Access */
+    .map { aspect-ratio: 16/9; width: 100%; border: 1.5px dashed var(--muted); border-radius: 12px; overflow: hidden; }
+
+    /* Footer */
+    footer { padding: 24px 0; color: #666; font-size: 14px; border-top: 1px dashed var(--muted); margin-top: 24px; }
+
+    /* Responsive */
+    @media (min-width: 720px) {
+      .banner-grid { grid-template-columns: 1fr 1fr; }
+      .doctor { grid-template-columns: 280px 1fr; }
+    }
+
+    @media print {
+      .hero-nav { position: static; margin: 8px 0; }
+      a { text-decoration: underline; }
+      .btn, .hero-cta { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== HERO ===== -->
+  <section id="hero" class="hero-bleed" aria-label="ヒーロー（外観写真）">
+    <div class="hero-img"></div>
+    <div class="hero-overlay">
+      <div class="hero-title">三国駅前｜ひきクリニック</div>
+      <div class="hero-sub">皮膚腫瘍・皮膚外科の日帰り手術／アトピー・水虫・乾癬など一般皮膚科にも幅広く対応</div>
+      <div class="hero-cta">
+        <a class="btn" href="#surgery">手術メニューを見る</a>
+        <a class="btn btn-outline" href="#access">アクセス・お問い合わせ</a>
+      </div>
+    </div>
+    <nav class="hero-nav" aria-label="ページ内リンク">
+      <a href="#hero">ホーム</a>
+      <a href="#features">特徴</a>
+      <a href="#surgery">手術メニュー</a>
+      <a href="#doctor">医師紹介</a>
+      <a href="#hours">営業日時</a>
+      <a href="#access">住所・アクセス・お問い合わせ</a>
+    </nav>
+  </section>
+
+  <main class="container">
+    <!-- ===== FEATURES ===== -->
+    <section id="features" class="section">
+      <h2>ひきクリニックの特徴</h2>
+      <div class="wf lead">
+        <p><strong>大学病院の皮膚腫瘍・皮膚外科専門外来での経験を持つ皮膚科専門医</strong>が、皮膚腫瘍などの<strong>日帰り手術</strong>を行います。</p>
+        <p>また、<strong>アトピー性皮膚炎・水虫（白癬）・乾癬</strong>など<strong>腫瘍以外の皮膚疾患</strong>にも、年齢を問わず幅広く対応します。初診・再診ともにお気軽にご相談ください。</p>
+      </div>
+    </section>
+
+    <!-- ===== SURGERY MENU (BANNERS) ===== -->
+    <section id="surgery" class="section">
+      <h2>手術のメニュー</h2>
+      <div class="banner-grid">
+        <a class="banner" href="#surgery-atheroma" aria-label="粉瘤（アテローム）">
+          <div class="thumb">粉瘤<br>（アテローム）</div>
+          <div>
+            <strong>粉瘤（アテローム）</strong>
+            <div class="desc">皮膚の下にできる袋状の良性腫瘍。局所麻酔下で袋ごと摘出することで再発を抑えます。サイズ・部位により切開線を最小化。</div>
+          </div>
+        </a>
+        <a class="banner" href="#surgery-nevus" aria-label="ほくろの切除">
+          <div class="thumb">ほくろ<br>切除</div>
+          <div>
+            <strong>ほくろの切除</strong>
+            <div class="desc">形・色・大きさ・部位を考慮し、切除縫合やくり抜き法などから適切な方法を選択。病理検査で安心を確認します。</div>
+          </div>
+        </a>
+        <a class="banner" href="#surgery-lipoma" aria-label="脂肪腫">
+          <div class="thumb">脂肪腫</div>
+          <div>
+            <strong>脂肪腫</strong>
+            <div class="desc">皮下にできる柔らかな良性腫瘍。被膜を含めて切除し、術後の形態にも配慮。サイズが大きい場合は術前評価を行います。</div>
+          </div>
+        </a>
+        <a class="banner" href="#surgery-others" aria-label="その他">
+          <div class="thumb">その他</div>
+          <div>
+            <strong>その他</strong>
+            <div class="desc">石灰化上皮腫、汗管腫、皮膚線維腫など良性腫瘍の切除・生検。部位や生活動作に合わせ、瘢痕の目立ちにくいデザインを検討。</div>
+          </div>
+        </a>
+        <a class="banner" href="#surgery-cash" aria-label="自費診療">
+          <div class="thumb">自費診療</div>
+          <div>
+            <strong>自費診療</strong>
+            <div class="desc">保険適用外の施術（例：美容目的のほくろ除去 等）。料金・適応・リスクを事前にご説明し、同意のうえで実施します。</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== SURGERY DETAILS ===== -->
+    <section class="section" id="surgery-details">
+      <h2>手術メニューの説明</h2>
+
+      <article id="surgery-atheroma" class="wf" style="padding:16px; margin-bottom:16px;">
+        <h3>粉瘤（アテローム）</h3>
+        <ul>
+          <li><strong>対象：</strong>皮膚の下にしこり（中央に黒い点を伴うことあり）、腫れや痛み・臭いが気になる等</li>
+          <li><strong>方法：</strong>局所麻酔／袋（被膜）を含めて摘出。感染を伴う場合は段階的治療（切開排膿→待機的切除）</li>
+          <li><strong>所要時間：</strong>15〜40分（大きさ・部位で変動）</li>
+          <li><strong>保険適用：</strong>あり（病理検査を併用することがあります）</li>
+          <li><strong>術後：</strong>抜糸目安7〜14日／入浴は当日〜翌日から可（部位・出血状況により指示）</li>
+        </ul>
+      </article>
+
+      <article id="surgery-nevus" class="wf" style="padding:16px; margin-bottom:16px;">
+        <h3>ほくろの切除</h3>
+        <ul>
+          <li><strong>対象：</strong>隆起して引っかかる、出血する、形・色が気になる 等</li>
+          <li><strong>方法：</strong>局所麻酔／紡錘形切除・くり抜き法（パンチ）・皮膚縫合などから選択</li>
+          <li><strong>所要時間：</strong>10〜30分</li>
+          <li><strong>病理検査：</strong>悪性所見の有無を確認（推奨）</li>
+          <li><strong>費用：</strong>保険適用／美容目的での除去は自費となる場合あり</li>
+        </ul>
+      </article>
+
+      <article id="surgery-lipoma" class="wf" style="padding:16px; margin-bottom:16px;">
+        <h3>脂肪腫</h3>
+        <ul>
+          <li><strong>対象：</strong>皮下のやわらかいしこり（数cm〜）、圧痛・見た目の問題</li>
+          <li><strong>方法：</strong>局所麻酔／被膜を含め切除。大きい場合は画像検査や術前採血を行うことがあります</li>
+          <li><strong>所要時間：</strong>20〜60分</li>
+          <li><strong>保険適用：</strong>あり（病理検査を併用することがあります）</li>
+          <li><strong>術後：</strong>安静度・圧迫固定の指示あり。抜糸は7〜14日目が目安</li>
+        </ul>
+      </article>
+
+      <article id="surgery-others" class="wf" style="padding:16px; margin-bottom:16px;">
+        <h3>その他（良性腫瘍など）</h3>
+        <ul>
+          <li><strong>対象：</strong>石灰化上皮腫、汗管腫、皮膚線維腫、皮膚付属器腫瘍 等</li>
+          <li><strong>方法：</strong>病変の種類・位置・大きさに応じて切除・摘除・生検などを選択</li>
+          <li><strong>所要時間：</strong>10〜45分</li>
+          <li><strong>保険適用：</strong>疾患により適用可。美容目的は自費</li>
+        </ul>
+      </article>
+
+      <article id="surgery-cash" class="wf" style="padding:16px;">
+        <h3>自費診療</h3>
+        <ul>
+          <li><strong>対象：</strong>美容目的のほくろ除去 等、保険適用外の施術</li>
+          <li><strong>方法：</strong>適応・リスク・費用を事前に説明。十分にご理解いただいた上で実施</li>
+          <li><strong>費用：</strong>メニューにより異なります（院内掲示・見積でご案内）</li>
+        </ul>
+      </article>
+
+      <p class="muted" style="margin-top:12px;">※上記は一般的な説明です。詳細は診察時に個別にご案内します。既往歴・内服薬・アレルギーの申告をお願いします。</p>
+    </section>
+
+    <!-- ===== DOCTOR ===== -->
+    <section id="doctor" class="section">
+      <h2>医師紹介</h2>
+      <div class="doctor">
+        <div class="doc-photo" aria-label="医師の写真">
+          <img src="https://hiki-clinic.or.jp/column/wp-content/uploads/2023/09/profile.jpg" alt="日置 正人 医師のポートレート">
+        </div>
+        <div class="wf" style="padding:16px">
+          <p><strong>院長：</strong>ひき ◯◯（皮膚科専門医）</p>
+          <ul>
+            <li>専門：皮膚腫瘍・皮膚外科、日帰り手術</li>
+            <li>経歴：大学病院 皮膚腫瘍/皮膚外科 専門外来 など</li>
+            <li>メッセージ：地域の皆さまに質の高い皮膚診療を…（仮）</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HOURS ===== -->
+    <section id="hours" class="section">
+      <h2>営業日時</h2>
+      <div class="wf" style="padding:16px">
+        <table>
+          <thead>
+            <tr><th>曜日</th><th>午前</th><th>午後</th><th>備考</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>月</td><td>09:00–12:00</td><td>14:00–18:00</td><td></td></tr>
+            <tr><td>火</td><td>09:00–12:00</td><td>14:00–18:00</td><td></td></tr>
+            <tr><td>水</td><td>09:00–12:00</td><td>14:00–18:00</td><td></td></tr>
+            <tr><td>木</td><td>09:00–12:00</td><td>14:00–18:00</td><td></td></tr>
+            <tr><td>金</td><td>09:00–12:00</td><td>14:00–18:00</td><td></td></tr>
+            <tr><td>土</td><td>09:00–12:00</td><td>午後休</td><td></td></tr>
+            <tr><td>日/祝</td><td colspan="3">休診</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===== ACCESS & CONTACT (Bottom) ===== -->
+    <section id="access" class="section">
+      <h2>住所・アクセス・お問い合わせ</h2>
+      <div class="wf" style="padding:16px">
+        <p><strong>住所：</strong><span class="muted">（例）〒000-0000 大阪市淀川区三国本町◯-◯-◯（三国駅前）</span></p>
+        <p><strong>アクセス：</strong><span class="muted">阪急宝塚線「三国」駅から徒歩◯分／駐車場◯台 など</span></p>
+        <p><strong>電話：</strong><a href="tel:06-0000-0000">06-0000-0000</a>　<strong>メール：</strong><a href="mailto:info@hiki-clinic.jp">info@hiki-clinic.jp</a></p>
+        <p><a href="https://www.google.com/maps?q=%E4%B8%89%E5%9B%BD%E9%A7%85%20%E5%A4%A7%E9%98%AA&output=embed" target="_blank" rel="noopener">Googleマップで見る（外部リンク）</a></p>
+        <div class="map" aria-label="地図">
+          <iframe title="Google Map" src="https://www.google.com/maps?q=%E4%B8%89%E5%9B%BD%E9%A7%85%20%E5%A4%A7%E9%98%AA&output=embed" width="100%" height="100%" style="border:0;" loading="lazy"></iframe>
+        </div>
+        <div style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap">
+          <a class="wf" style="padding:10px 14px;border-radius:10px" href="mailto:info@hiki-clinic.jp">メールで問い合わせ</a>
+          <a class="wf" style="padding:10px 14px;border-radius:10px" href="tel:06-0000-0000">電話をかける</a>
+          <a class="wf" style="padding:10px 14px;border-radius:10px" href="#hero">ページ上部へ戻る</a>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:8px;">※掲載の時間・料金・適応は予告なく変更となる場合があります。最新情報は受付までお問い合わせください。</p>
+    </section>
+
+    <footer class="container">
+      <div>© 2025 ひきクリニック</div>
+    </footer>
+  </main>
+</body>
+</html>
