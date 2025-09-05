@@ -9,17 +9,18 @@
     * { box-sizing: border-box; }
     html,body { margin:0; font-family: system-ui,-apple-system,Segoe UI,Roboto,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif; color:#222; }
     a { color:inherit; text-decoration:none; }
-
     .container { max-width: var(--maxw); margin: 0 auto; padding: 0 16px; }
     .wf { border:1.5px dashed var(--muted); border-radius:12px; background:#fff; }
 
     /* ===== HERO：フルワイド画像＋右上ナビ ===== */
     .hero-bleed { position:relative; width:100%; }
-    .hero-img { width:100%; height: clamp(300px, 50vh, 560px); display:grid; place-items:center; color:var(--muted); background:#f2f2f7; border:2px dashed var(--muted); }
+    .hero-img { width:100%; height: clamp(300px, 50vh, 560px);
+      display:grid; place-items:center; color:var(--muted);
+      background:#f2f2f7; border:2px dashed var(--muted); }
     .hero-nav { position:absolute; top:16px; right:16px; display:flex; gap:8px; flex-wrap:wrap; }
     .hero-nav a { padding:8px 12px; border:1px dashed var(--muted); border-radius:999px; background:rgba(255,255,255,.85); font-size:14px; }
 
-    /* ===== ベースセクション ===== */
+    /* ===== セクション ===== */
     .section { padding:32px 0; }
     .section h2 { margin:0 0 12px; font-size:20px; }
 
@@ -82,7 +83,7 @@
       </div>
     </section>
 
-    <!-- ===== 手術メニュー（4つのバナー：粉瘤／ほくろ切除／脂肪腫／自費診療） ===== -->
+    <!-- ===== 手術メニュー（4つのバナー） ===== -->
     <section id="surgery" class="section">
       <h2>手術のメニュー</h2>
       <div class="banner-grid">
@@ -90,7 +91,7 @@
         <!-- 粉瘤（アテローム） -->
         <a class="banner" href="#surgery-atheroma" aria-label="粉瘤（アテローム）">
           <div class="thumb">
-            <img src="images/operating-1.avif" alt="粉瘤手術のイメージ">
+            <img src="images/photo-1638598124048-10c5b3f2f964.avif" alt="粉瘤手術のイメージ">
           </div>
           <div>
             <strong>粉瘤（アテローム）</strong>
@@ -101,7 +102,7 @@
         <!-- ほくろの切除 -->
         <a class="banner" href="#surgery-nevus" aria-label="ほくろの切除">
           <div class="thumb">
-            <img src="images/shujutsu.jpg" alt="ほくろ切除の手術風景">
+            <img src="images/imagesshujutsu.jpg.jpg" alt="ほくろ切除の手術風景">
           </div>
           <div>
             <strong>ほくろの切除</strong>
@@ -112,7 +113,7 @@
         <!-- 脂肪腫 -->
         <a class="banner" href="#surgery-lipoma" aria-label="脂肪腫">
           <div class="thumb">
-            <img src="images/operating-2.avif" alt="脂肪腫切除のイメージ">
+            <img src="images/photo-1640876777012-bdb00a6323e2.avif" alt="脂肪腫切除のイメージ">
           </div>
           <div>
             <strong>脂肪腫</strong>
@@ -123,7 +124,7 @@
         <!-- 自費診療 -->
         <a class="banner" href="#surgery-cash" aria-label="自費診療">
           <div class="thumb">
-            <img src="images/jihi.jpg" alt="自費診療の施術風景">
+            <img src="images/imagesjihi.jpg.jpg" alt="自費診療の施術風景">
           </div>
           <div>
             <strong>自費診療</strong>
