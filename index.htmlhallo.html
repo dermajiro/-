@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <p>hello</p>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ひきクリニック｜ワイヤーフレーム</title>
+  <style>
+    :root { --maxw: 1120px; --gap: 16px; --muted:#8e8e93; }
+    * { box-sizing: border-box; }
+    html,body { margin:0; font-family: system-ui,-apple-system,Segoe UI,Roboto,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif; color:#222; }
+    a { color:inherit; text-decoration:none; }
+    .container { max-width: var(--maxw); margin: 0 auto; padding: 0 16px; }
+    .wf { border:1.5px dashed var(--muted); border-radius:12px; background:#fff; }
+
+    /* ===== HERO：フルワイド画像＋右上ナビ ===== */
+    .hero-bleed { position:relative; width:100%; }
+    .hero-img { width:100%; height: clamp(300px, 50vh, 560px);
+      display:grid; place-items:center; color:var(--muted);
+      background:#f2f2f7; border:2px dashed var(--muted); }
+    .hero-nav { position:absolute; top:16px; right:16px; display:flex; gap:8px; flex-wrap:wrap; }
+    .hero-nav a { padding:8px 12px; border:1px dashed var(--muted); border-radius:999px; background:rgba(255,255,255,.85); font-size:14px; }
+
+    /* ===== セクション ===== */
+    .section { padding:32px 0; }
+    .section h2 { margin:0 0 12px; font-size:20px; }
+
+    /* ===== 手術メニュー（バナー） ===== */
+    .banner-grid { display:grid; grid-template-columns:1fr; gap:var(--gap); }
+    .banner { display:grid; grid-template-columns:140px 1fr; gap:12px; align-items:center;
+              padding:12px; border:1.5px dashed var(--muted); border-radius:12px; background:#fff; }
+    .thumb { width:140px; height:96px; border:1.5px dashed var(--muted); border-radius:8px; overflow:hidden; background:#f2f2f7; display:grid; place-items:center; color:var(--muted); }
+    .thumb img { width:100%; height:100%; object-fit:cover; display:block; border-radius:8px; }
+    .desc { color:#555; font-size:14px; }
+
+    /* ===== 医師紹介 ===== */
+    .doctor { display:grid; grid-template-columns:1fr; gap:var(--gap); }
+    .doc-photo { height:200px; border:1.5px dashed var(--muted); border-radius:10px; display:grid; place-items:center; color:var(--muted); background:#f7f7fa; }
+
+    /* ===== 診療時間 ===== */
+    table { width:100%; border-collapse:collapse; }
+    th,td { border:1px dashed var(--muted); padding:10px; text-align:center; }
+    th { background:#fafafa; }
+
+    /* ===== アクセス ===== */
+    .map { height:240px; border:2px dashed var(--muted); border-radius:12px; display:grid; place-items:center; color:var(--muted);
+           background:repeating-linear-gradient(45deg,#f7f7fa,#f7f7fa 10px,#f0f0f5 10px,#f0f0f5 20px); }
+
+    @media (min-width: 720px) {
+      .banner-grid { grid-template-columns: 1fr 1fr; }
+      .doctor { grid-template-columns: 280px 1fr; }
+    }
+
+    @media print {
+      .hero-nav { position:static; margin:8px 0; }
+      a { text-decoration: underline; }
+    }
+
+    [data-note]::after { content:attr(data-note); display:block; margin-top:6px; font-size:12px; color:var(--muted); }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HERO（外観写真は後で差し替え可） ===== -->
+  <section id="hero" class="hero-bleed">
+    <div class="hero-img" aria-label="外観写真の仮領域" data-note="ここにクリニック外観写真（フルワイド）">HERO: クリニック外観</div>
+    <nav class="hero-nav" aria-label="ページ内リンク">
+      <a href="#hero">ホーム</a>
+      <a href="#features">特徴</a>
+      <a href="#surgery">手術メニュー</a>
+      <a href="#doctor">医師紹介</a>
+      <a href="#hours">営業日時</a>
+      <a href="#access">アクセス・お問い合わせ</a>
+    </nav>
+  </section>
+
+  <main class="container">
+    <!-- ===== 特徴 ===== -->
+    <section id="features" class="section">
+      <h2>ひきクリニックの特徴</h2>
+      <div class="wf" style="padding:16px" data-note="実データに置換してください">
+        <p><strong>大学病院の皮膚腫瘍・皮膚外科専門外来での経験を持つ皮膚科専門医</strong>が、皮膚腫瘍などの<strong>日帰り手術</strong>を行います。</p>
+        <p>また、<strong>アトピー性皮膚炎・水虫（白癬）・乾癬</strong>など<strong>腫瘍以外の皮膚疾患</strong>にも幅広く対応します。</p>
+      </div>
+    </section>
+
+    <!-- ===== 手術メニュー（4つのバナー） ===== -->
+    <section id="surgery" class="section">
+      <h2>手術のメニュー</h2>
+      <div class="banner-grid">
+
+        <!-- 粉瘤（アテローム） -->
+        <a class="banner" href="#surgery-atheroma" aria-label="粉瘤（アテローム）">
+          <div class="thumb">
+            <img src="images/photo-1638598124048-10c5b3f2f964.avif" alt="粉瘤手術のイメージ">
+          </div>
+          <div>
+            <strong>粉瘤（アテローム）</strong>
+            <div class="desc">袋ごと摘出して再発を抑える標準的な日帰り手術です。</div>
+          </div>
+        </a>
+
+        <!-- ほくろの切除 -->
+        <a class="banner" href="#surgery-nevus" aria-label="ほくろの切除">
+          <div class="thumb">
+            <img src="images/imagesshujutsu.jpg.jpg" alt="ほくろ切除の手術風景">
+          </div>
+          <div>
+            <strong>ほくろの切除</strong>
+            <div class="desc">紡錘形切除・くり抜き法などから適切に選択。病理検査にも対応。</div>
+          </div>
+        </a>
+
+        <!-- 脂肪腫 -->
+        <a class="banner" href="#surgery-lipoma" aria-label="脂肪腫">
+          <div class="thumb">
+            <img src="images/photo-1640876777012-bdb00a6323e2.avif" alt="脂肪腫切除のイメージ">
+          </div>
+          <div>
+            <strong>脂肪腫</strong>
+            <div class="desc">被膜を含めて切除し形態にも配慮。局所麻酔での日帰り対応が中心です。</div>
+          </div>
+        </a>
+
+        <!-- 自費診療 -->
+        <a class="banner" href="#surgery-cash" aria-label="自費診療">
+          <div class="thumb">
+            <img src="images/imagesjihi.jpg.jpg" alt="自費診療の施術風景">
+          </div>
+          <div>
+            <strong>自費診療</strong>
+            <div class="desc">美容目的のほくろ除去など。料金やリスクは事前にご案内します。</div>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ===== 医師紹介 ===== -->
+    <section id="doctor" class="section">
+      <h2>医師紹介</h2>
+      <div class="doctor">
+        <div class="doc-photo" aria-label="医師写真の仮領域">PHOTO</div>
+        <div class="wf" style="padding:16px">
+          <p><strong>院長：</strong>ひき ◯◯（皮膚科専門医）</p>
+          <ul>
+            <li>専門：皮膚腫瘍・皮膚外科、日帰り手術</li>
+            <li>経歴：大学病院 皮膚腫瘍/皮膚外科 専門外来 など</li>
+            <li>メッセージ：地域の皆さまに質の高い皮膚診療を…（仮）</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 営業日時 ===== -->
+    <section id="hours" class="section">
+      <h2>営業日時</h2>
+      <div class="wf" style="padding:16px">
+        <table>
+          <thead>
+            <tr><th>曜日</th><th>午前</th><th>午後</th><th>備考</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>月</td><td>09:00–12:00</td><td>14:00–18:00</td><td></td></tr>
+            <tr><td>火</td><td>09:00–12:00</td><td>14:00–18:00</td><td></td></tr>
+            <tr><td>水</td><td>09:00–12:00</td><td>14:00–18:00</td><td></td></tr>
+            <tr><td>木</td><td>09:00–12:00</td><td>14:00–18:00</td><td></td></tr>
+            <tr><td>金</td><td>09:00–12:00</td><td>14:00–18:00</td><td></td></tr>
+            <tr><td>土</td><td>09:00–12:00</td><td>午後休</td><td></td></tr>
+            <tr><td>日/祝</td><td colspan="3">休診</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===== アクセス・お問い合わせ ===== -->
+    <section id="access" class="section">
+      <h2>住所・アクセス・お問い合わせ</h2>
+      <div class="wf" style="padding:16px">
+        <p><strong>住所：</strong>（例）〒000-0000 香川県〇〇市〇〇 1-2-3</p>
+        <p><strong>アクセス：</strong>（最寄駅・駐車場情報 など）</p>
+        <p><strong>電話：</strong>000-000-0000　<strong>メール：</strong>info@example.com</p>
+        <p><a href="#" target="_blank" rel="noopener">Googleマップで見る（外部リンク）</a></p>
+        <div class="map" aria-label="地図の仮領域">MAP PLACEHOLDER</div>
+        <div style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap">
+          <a class="wf" style="padding:10px 14px;border-radius:10px" href="#">お問い合わせフォーム（仮）</a>
+          <a class="wf" style="padding:10px 14px;border-radius:10px" href="tel:0000000000">電話をかける（仮）</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="container" style="padding:24px 0;color:#666;font-size:14px;border-top:1px dashed var(--muted)">
+      <div>© 2025 ひきクリニック</div>
+    </footer>
+  </main>
+
+</body>
+</html>
